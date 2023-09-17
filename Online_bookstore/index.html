@@ -3,13 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookstore</title>
+    <title>Online Book</title>
 </head>
 <body>
-    <form>
-        <input type="text" placeholder="">
-        <input type="date" >
+    <h1 id="head"></h1>
+    <script>
+            
+function Author(name, birthYear, nationality) {
+  this.name = name;
+  this.birthYear = birthYear;
+  this.nationality = nationality;
+}
+function Book(title, author, genre, price) {
+  this.title = title;
+  this.author = author;
+  this.genre = genre;
+  this.price = price;
+}
 
-    </form>
+const author1 = new Author('Napoleon Hill and Rosa Lee Beeland', 1937, 'American');
+const author2 = new Author('Mel Robbins', 2017, 'American');
+const author3 = new Author('Jane Austen', 1775, 'British');
+
+const book1 = new Book('Think and Grow Rich', author1, 'personal development', 20.99);
+const book2 = new Book('The 5 Second Rule', author2, 'Motivational', 15.99);
+const book3 = new Book('Pride and Prejudice', author3, 'Romance', 12.99);
+
+const bookstore = [book1, book2, book3];
+
+Book.prototype.getBookInfo = function () {
+  console.log(`Title: ${this.title}`);
+  console.log(`Author: ${this.author.name}`);
+  console.log(`Genre: ${this.genre}`);
+  console.log(`Price: $${this.price}`);
+  console.log('---');
+  
+};
+
+let head = document.getElementById("head");
+console.log('Online Bookstore:');
+console.log('==================');
+bookstore.forEach((book) => {
+    book.getBookInfo();
+    });
+
+ </script>
 </body>
 </html>

@@ -55,7 +55,7 @@ function getTotalBalance(){
     console.log(arr[i].name+" "+ "your total account balance is :"+" "+ arr[i].balance)
     let total = document.createElement("h2");
 
-    total.innerText=(arr[i].name+" "+ `your account balance is :`+" "+arr[i].balance );
+    total.innerText=(`${arr[i].name} your account balance is : ${arr[i].balance}` );
     body.append(total);
     }   
 }
